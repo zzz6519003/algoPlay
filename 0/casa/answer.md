@@ -1,7 +1,8 @@
 我的主要思路是通过hash表来找重复的值，通过这个思路来解决问题的关键点正如唐大伟所说，就在于如何能够有效剪枝。
 
 1. 建立基础数据结构：
-    ```c
+    ```
+
     typedef struct {
         node *previous,
         node *next,
@@ -10,6 +11,7 @@
         uint64 a,
         uint64 b
     }node;
+
     ``` 
 2. (a, b)数字对可以理解成一个二维数组,取二维数组的模长,用它来做hash, 放入node中，previous和next默认NULL.
 3. 准备一个差不多长（看实际情况）的数组，根据hash计算出存放node的index，一般取余也就够了。
